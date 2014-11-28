@@ -107,7 +107,7 @@ class OutController extends Controller
         $stream .= 'RetryTime:' . $model->retryTime . PHP_EOL;
         $stream .= 'WaitTime:' . $model->waitTime . PHP_EOL;
         $stream .= 'Set:CIDDest=' . $model->to . PHP_EOL;
-        $stream .= 'Set:id=' . $model->id . PHP_EOL;
+        $stream .= 'Set:Id=' . $model->id . PHP_EOL;
         $stream .= 'Set:Url=' . $model->url . PHP_EOL;
         $stream .= 'Set:Token=' . $model->token . PHP_EOL;
         $stream .= 'Set:testo=' . $model->message . PHP_EOL;
