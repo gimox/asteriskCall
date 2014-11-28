@@ -1,0 +1,39 @@
+Listen 8081
+
+<VirtualHost *:8081>
+        #ServerName www.example.com
+
+        ServerAdmin webmaster@localhost
+        DocumentRoot /var/www/asteriskCall/web
+
+        <Directory /var/www/asteriskCall/web>
+                RewriteEngine on
+                 # If a directory or a file exists, use the request directly
+                RewriteCond %{REQUEST_FILENAME} !-f
+                RewriteCond %{REQUEST_FILENAME} !-d
+                # Otherwise forward the request to index.php
+                RewriteRule . index.php
+
+                Options Indexes FollowSymLinks
+                AllowOverride none
+                Order allow,deny
+                allow from all
+                #Require all granted
+        </Directory>
+
+
+        # Available loglevels: trace8, ..., trace1, debug, info, notice, warn,
+        # error, crit, alert, emerg.
+        # It is also possible to configure the loglevel for particular
+        # modules, e.g.
+        #LogLevel info ssl:warn
+        LogLevel warn
+        ErrorLog ${APACHE_LOG_DIR}/error_asteriskapi.log
+        CustomLog ${APACHE_LOG_DIR}/access_asteriskapi.log combined
+
+</VirtualHost>
+
+# vim: syntax=apache ts=4 sw=4 sts=4 sr noet
+
+
+

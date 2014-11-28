@@ -1,0 +1,48 @@
+{
+    "name": "FoxBox APi",
+    "description": "Web Service for Foxbox",
+    "keywords": ["easynetwork", "foxbox", "api"],
+    "homepage": "http://www.easynetwork.eu/",
+    "type": "project",
+    "license": "BSD-3-Clause",
+    "support": {
+        "issues": "https://github.com/gimox/foxboApi/issues",
+        "wiki": "https://github.com/gimox/foxboApi/wiki",
+        "source": "https://github.com/gimox/foxboApi"
+    },
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=5.4.0",
+        "yiisoft/yii2": "*",
+        "yiisoft/yii2-bootstrap": "*"
+    },
+    "require-dev": {
+        "yiisoft/yii2-gii": "*"
+    },
+    "config": {
+        "process-timeout": 1800
+    },
+    "scripts": {
+        "post-create-project-cmd": [
+            "yii\\composer\\Installer::postCreateProject"
+        ]
+    },
+    "extra": {
+        "yii\\composer\\Installer::postCreateProject": {
+            "setPermission": [
+                {
+                    "runtime": "0777",
+                    "web/assets": "0777",
+                    "yii": "0755"
+                }
+            ],
+            "generateCookieValidationKey": [
+                "config/web.php"
+            ]
+        },
+        "asset-installer-paths": {
+            "npm-asset-library": "vendor/npm",
+            "bower-asset-library": "vendor/bower"
+        }
+    }
+}

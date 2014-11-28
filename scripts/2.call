@@ -1,0 +1,13 @@
+Channel:local/200@outgoing/n
+MaxRetries:1
+RetryTime:45
+WaitTime:15
+Set:CIDDest=200
+Set:Url=http...
+Set:Token=ciao
+Set:testo=Ciao
+
+Context:outgoing
+Extension:653
+Priority:1
+Archive: Yes
