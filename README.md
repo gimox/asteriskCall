@@ -1,4 +1,4 @@
-FOXBOX API WEB SERVICE
+ASTERISK API WEB SERVICE
 ================================
 
 A custom WebService for Asterisk Outgoing call queue.
