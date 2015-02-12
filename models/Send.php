@@ -65,6 +65,14 @@ class Send extends Model
      */
     public $message;
 
+    /**
+     * @var
+     */
+    public $urgente;
+
+
+    public $task;
+
 
     public $id;
 
@@ -76,7 +84,7 @@ class Send extends Model
     {
         return [
 
-            [['to', 'message','context', 'extension'], 'required'],
+            [['to', 'message','context', 'extension', 'task'], 'required'],
 
             ['priority', 'integer'],
             ['priority', 'default', 'value' => 1],
@@ -99,7 +107,10 @@ class Send extends Model
             ['token', 'string', 'max' => 160],
             ['message', 'string', 'max' => 250],
 
+            ['urgente','default','value'=>0],
+
             ['id', 'integer'],
+
 
         ];
     }

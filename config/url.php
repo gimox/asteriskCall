@@ -7,5 +7,4 @@ return [
 
     //send Ws Api
     'POST api/send' => 'out/send'
-
 ];

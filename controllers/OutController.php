@@ -77,7 +77,7 @@ class OutController extends Controller
             if ($this->saveToFile($stream)) {
 
                 return [
-                    'status'  => 10,
+                    'status'  => 11,
                     'message' => 'saved',
                     //  'stream'  => $stream,
                 ];
@@ -109,15 +109,19 @@ class OutController extends Controller
         $stream .= 'Set:CIDDest=' . $model->to . PHP_EOL;
         $stream .= 'Set:Id=' . $model->id . PHP_EOL;
         $stream .= 'Set:Url=' . $model->url . PHP_EOL;
+        $stream .= 'Set:urgente=' . $model->urgente . PHP_EOL;
         $stream .= 'Set:Token=' . $model->token . PHP_EOL;
         $stream .= 'Set:testo=' . $model->message . PHP_EOL;
+        $stream .= 'Set:task=' . $model->task . PHP_EOL;
         $stream .= 'Context:' . $model->context . PHP_EOL;
         $stream .= 'Extension:' . $model->extension . PHP_EOL;
         $stream .= 'Priority:' . $model->priority . PHP_EOL;
         $stream .= 'Archive:' . $model->archive . PHP_EOL;
 
+
         return $stream;
     }
+
 
 
     /**
